@@ -1,7 +1,8 @@
 import Vue from 'vue'
 import App from './App.vue'
+import Router from './config/router.js'
 
-Vue.config.productionTip = false
+const router = Router()
 
 new Vue({
   render: h => h(App),
