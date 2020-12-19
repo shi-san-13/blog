@@ -1,3 +1,5 @@
+import { component } from 'vue/types/umd';
+
 export default {
     mode: 'history',
     routes: [{
