@@ -1,7 +1,7 @@
 <template>
     <div>
         home 1234
-        <router-link to="/page2">跳转页面</router-link>
+        <router-link to="/">跳转页面</router-link>
         <hello :msg="'123412312315'"/>
     </div>
 </template>
@@ -13,12 +13,5 @@ export default {
     components: {
         hello,
     },
-    methods: {
-        jump() {
-            this.$router.push({
-                path: '/'
-            });
-        }
-    }
 }
 </script>

@@ -1,14 +1,16 @@
-import {component} from 'vue/types/umd';
+
 export default {
-    mode: 'history',
     routes: [{
         path: '/',
         component: () => import ('@/views/home.vue')
     },{
-        path: '/123',
+        path: '/233',
         component: () => import ('@/views/home2.vue')
     },{
         path: '*',
-        component: () => import ('@/views/err.vue')
+        component: () => import ('@/views/err.vue')  
+    },{
+        path: '/123',
+        component: () => import('@/views/home3.vue')
     }]
 }
