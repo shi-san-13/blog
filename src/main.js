@@ -6,7 +6,7 @@ import RouterConfig from './config/router.cfg'
 
 const router = new VueRouter(RouterConfig);
 
-Vue.use(VueRouter);
+Vue.use(VueRouter); 
 
 Vue.config.productionTip = false
 

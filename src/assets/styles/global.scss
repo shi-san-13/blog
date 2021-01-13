@@ -1,0 +1,22 @@
+*{
+  margin: 0;
+  padding: 0;
+}
+li {
+  list-style-type: none;
+}
+a {
+  display: inline-block;
+  text-decoration:none;
+  color: white;
+}
+body {
+  font-size: 18px;
+  background-image: url('../image/1.png');
+}
+.header {
+  width: 1920px;
+  height: 100px;
+  background-color: white;
+  box-shadow: 0 -24px 25px 19px black;
+}

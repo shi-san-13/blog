@@ -1,16 +1,21 @@
-
 export default {
     routes: [{
-        path: '/',
+        path: '/home',
         component: () => import ('@/views/home.vue')
-    },{
-        path: '/233',
-        component: () => import ('@/views/home2.vue')
     },{
         path: '*',
         component: () => import ('@/views/err.vue')  
     },{
-        path: '/123',
-        component: () => import('@/views/home3.vue')
+        path:'/VUE',
+        component: () => import ('@/views/Vue.vue')
+    },{
+        path:'/Javascript',
+        component: () => import ('@/views/Javascript.vue')
+    },{
+        path:'/HTML',
+        component: () => import ('@/views/HTML.vue')
+    },{
+        path:'/CSS',
+        component: () => import ('@/views/CSS.vue')
     }]
 }

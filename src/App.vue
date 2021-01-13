@@ -1,33 +1,33 @@
 <template>
   <div id="app">
-    <div>
-      有道写作new 同传 翻译机 人工翻译 翻译API 翻译APP 登录
+    <div class="header">
+      <HeaderNav />
     </div>
-    
-    <div class="content">
-      <router-view />
-    </div>
-
+    <router-view />
     <footer>
-      有道首页|有道智选|有道精品课|关于有道|官方博客
-      © 2020 网易公司 网易公司 隐私政策 京ICP证080268号 京ICP备10005211号
+      <HeaderFooter />
     </footer>
   </div>
 </template>
 
 <script>
+import '@/assets/styles/global.scss'
+import HeaderNav from '@/components/Header/Nav.vue'
+import HeaderFooter from '@/components/Footer.vue'
+
 export default {
   name: 'App',
+  components: {
+    HeaderNav,
+    HeaderFooter,
+  },
+  data(){
+    return {
+      navigation: ''
+    }
+  }
 }
 </script>
 
-<style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
+<style lang="scss">
 </style>
