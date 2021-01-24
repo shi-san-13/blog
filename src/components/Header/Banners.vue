@@ -9,7 +9,7 @@
       <ul class="small-banner">
           <li class="list" v-for="(parent,key) in nav" :key="key">
               <router-link class="link" :to="parent.to || '#'">
-                  <img :src="`/image/banner${2 + key}.jpg`">
+                  <img :src="`/image/banner${2 + key}.jpg`" >
                   <span class="title">{{ parent.name }}</span>
               </router-link>
           </li>
@@ -18,7 +18,7 @@
 </template>
 <script>
 export default {
-    name:'mark',
+    name:'marks',
     data() {
         return{
             nav:[
@@ -41,24 +41,27 @@ export default {
     display: flex;
     width: 800px;
     .big-banner{
+        z-index: -1; 
         .list-block{
             position: relative;
             img{
-                z-index: -1;
                 width: 600px;
             }
             .title{
                 position: absolute;
                 bottom: 0;
                 left: 0;
+                margin-bottom: 5px;
                 padding: 5px;
                 width: 100%;
-                background-color:rgb(129, 129, 129);
+                box-sizing:border-box;
+                background-color:rgba(129, 129, 129,0.5);
             }
         }
     }
     .small-banner{
         margin-left: 20px;
+        z-index: -1; 
         .list{
             position: relative;
             .link{
@@ -70,10 +73,12 @@ export default {
                     position: absolute;
                     bottom: 0;
                     left: 0;
+                    width:100%;
                     font-size: 14px;
                     padding:5px;
+                    margin-bottom: 5px;
                     box-sizing:border-box;
-                    background-color:rgb(129, 129, 129);
+                    background-color:rgba(129, 129, 129,.5);
                 }
             }
         }

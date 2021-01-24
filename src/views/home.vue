@@ -2,10 +2,13 @@
 <div id="main">
     <div class="warp">
         <div class="container">
-            <banner/>
-            <contents/>
+                <banner/>
+                <contents/>
         </div>
-        <side/>
+        <div class="sidebar-wrap">
+            <introduction/>
+            <side/>
+        </div>
     </div>
 </div>
 </template>
@@ -14,19 +17,18 @@
 import banner from '@/components/Header/Banners.vue'
 import side from '@/components/Header/Side.vue'
 import contents from '@/components/Header/Content.vue'
+import introduction from '@/components/Header/Introduction'
 export default {
     components:{
         banner,
         side,
         contents,
+        introduction,
     }
 }
 </script>
 
 <style lang="scss">
-img{
-    border-radius: 5%;
-}
 #main{
     .warp{
         display: flex;

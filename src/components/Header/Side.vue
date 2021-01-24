@@ -1,18 +1,16 @@
 <template>
-  <div class="sidebar-wrap">
-            <div class="sidebar">
-                <div class="sidebar-header">
-                    <h3>最新评论</h3>
-                </div>
-                <ul class="content">
-                    <li class="list" v-for="(comments,key) in nav" :key="key">
-                        <img src="@/assets/logo.png" width="20%" alt="LOGO">
-                        <h2>{{ comments.logo || '无'}}：</h2>
-                        <p>{{ comments.name || '无内容'}}</p>
-                    </li>
-                </ul>
-            </div> 
+    <div class="sidebar-content">
+        <div class="header">
+            <h3>最新评论</h3>
         </div>
+        <ul class="content">
+            <li class="list" v-for="(comments,key) in nav" :key="key">
+                <img src="@/assets/logo.png" width="20%" alt="LOGO">
+                <h2>{{ comments.logo || '无'}}：</h2>
+                <p>{{ comments.name || '无内容'}}</p>
+            </li>
+        </ul>
+    </div> 
 </template>
 <script>
 export default {
@@ -45,13 +43,12 @@ export default {
 }
 </script>
 <style lang="scss">
-.sidebar-wrap{
-    .sidebar{
+.sidebar-content{
     margin: 20px;
     border-radius:5%;
     width: 90%;
     box-shadow:5px 4px 18px 1px rgb(187, 187, 187);
-        .sidebar-header{
+        .header{
             padding:10px;
             background-color:rgb(0, 140, 255);
             color: rgb(255, 255, 255);
@@ -65,6 +62,5 @@ export default {
                 font-size: 14px;
             }
         }
-    }
 }
 </style>
