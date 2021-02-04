@@ -1,7 +1,7 @@
 <template>
 <div class="article-list-warp">
   <div class="article-header">
-      <h2>最新文章</h2>
+      <h4>最新文章</h4>
   </div>
   <article class="article-list" v-for="(article,key) in nav" :key="key">
       <div class="list-content">
@@ -47,17 +47,16 @@ export default {
 <style lang="scss">
 .article-list-warp{
     position: relative;
-    margin-top: 2%;
-    box-shadow:5px 4px 18px 1px rgb(187, 187, 187);
+    margin-top: 3%;
+    background-color: #fff;
     .article-header{
-        h2{
-          padding: 20px;
-          background-color: rgb(0, 140, 255);
-          color: white;
+        h4{
+          padding: 10px;
+          color: rgb(104, 104, 104);
         }
     }
     .article-list{
-      padding: 25px;
+      padding: 15px;
       .list-content{
         .title{
           margin-bottom: 10px;
@@ -81,7 +80,7 @@ export default {
       }
     }
     .article-list:hover:after{
-      width: 800px;
+      width: 100%;
     }
     .article-list:after{
       content: "";

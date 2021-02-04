@@ -1,20 +1,20 @@
 <template>
- <div class="banner">
-      <div class="big-banner">
-          <a href="/home" class="list-block">
-              <img src="@/assets/image/banner.jpg" alt="banner">
-              <span class="title">VUE</span>
-          </a>
-      </div>
-      <ul class="small-banner">
-          <li class="list" v-for="(parent,key) in nav" :key="key">
-              <router-link class="link" :to="parent.to || '#'">
-                  <img :src="`/image/banner${2 + key}.jpg`" >
-                  <span class="title">{{ parent.name }}</span>
-              </router-link>
-          </li>
-      </ul>
-  </div>
+    <div class="banner">
+        <div class="big-banner">
+            <a href="/home" class="list-block">
+                <img src="@/assets/image/banner.jpg" alt="banner">
+                <span class="title">VUE</span>
+            </a>
+        </div>
+        <ul class="small-banner">
+            <li class="list" v-for="(parent,key) in nav" :key="key">
+                <router-link class="link" :to="parent.to || '#'">
+                    <img :src="`/image/banner${2 + key}.jpg`" >
+                    <span class="title">{{ parent.name }}</span>
+                </router-link>
+            </li>
+        </ul>
+    </div>
 </template>
 <script>
 export default {
@@ -37,33 +37,26 @@ export default {
 }
 </script>
 <style lang="scss" >
- .banner{
+.banner{
     display: flex;
     width: 800px;
+    height: 507px;
+    margin-top: 30px;
+    justify-content:space-between;
     .big-banner{
         z-index: -1; 
         .list-block{
             position: relative;
             img{
-                width: 600px;
-            }
-            .title{
-                position: absolute;
-                bottom: 0;
-                left: 0;
-                margin-bottom: 5px;
-                padding: 5px;
-                width: 100%;
-                box-sizing:border-box;
-                background-color:rgba(129, 129, 129,0.5);
+                width: 625px;
             }
         }
     }
     .small-banner{
-        margin-left: 20px;
         z-index: -1; 
         .list{
             position: relative;
+            margin-bottom:10px;
             .link{
                 img{
                     width:163px;
@@ -84,4 +77,5 @@ export default {
         }
     }
 }
+
 </style>

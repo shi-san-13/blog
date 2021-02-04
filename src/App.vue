@@ -12,7 +12,7 @@
 
 <script>
 import '@/assets/styles/global.scss'
-import HeaderNav from '@/components/Header/Nav.vue'
+import HeaderNav from '@/components/Nav.vue'
 import HeaderFooter from '@/components/Footer.vue'
 
 export default {
@@ -30,4 +30,7 @@ export default {
 </script>
 
 <style lang="scss">
+#app{
+  
+}
 </style>

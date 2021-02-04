@@ -2,11 +2,12 @@
 <div id="main">
     <div class="warp">
         <div class="container">
-                <banner/>
-                <contents/>
+            <banner/>
+            <contents/>
         </div>
         <div class="sidebar-wrap">
             <introduction/>
+            <wechat/>
             <side/>
         </div>
     </div>
@@ -16,14 +17,16 @@
 <script>
 import banner from '@/components/Header/Banners.vue'
 import side from '@/components/Header/Side.vue'
-import contents from '@/components/Header/Content.vue'
 import introduction from '@/components/Header/Introduction'
+import wechat from '@/components/Header/WeChat.vue'
+import contents from '@/components/Header/Content.vue'
 export default {
     components:{
         banner,
         side,
         contents,
         introduction,
+        wechat
     }
 }
 </script>
@@ -35,8 +38,11 @@ export default {
         width: 1200px;
         margin: 0px auto;
         .container{
-            margin-top: 20px;
-            width: 70%;
+            width: 800px;
+        }
+        .sidebar-wrap{
+            width:400px;
+            padding-left: 30px;
         }
     }
 }

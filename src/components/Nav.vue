@@ -100,8 +100,6 @@ export default {
         display: block;
       }
     }
-    
-    
     .wrapper{
       position: absolute;
       display: none;
