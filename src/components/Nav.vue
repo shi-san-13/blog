@@ -1,20 +1,28 @@
 <template>
   <header class="navigation">
-    <ul class="nav-row">
-      <li class="nav-item" v-for="(parent, key) in nav" :key="key"> 
-       <router-link :to="parent.to || '#'">{{ parent.name }}</router-link>
-        <div class="wrapper" v-if="parent.childs">
-          <ul class="view">
-            <li class="item" v-for="(child, i) in parent.childs" :key="i">
-              <router-link :to="child.to || '#'">{{child.name}}</router-link>
-            </li>
-          </ul>
-        </div>
-      </li>
-    </ul>
+    <div class="logo">
+      <i>LOGO</i>
+    </div>
+    <div class="nav-wrapper">
+      <ul class="nav-row">
+        <li class="nav-item" v-for="(parent, key) in nav" :key="key"> 
+          <router-link :to="parent.to || '#'" >
+            <i :class="[parent.icon]"></i> {{ parent.name }} 
+          </router-link>
+          <div class="wrapper" v-if="parent.childs">
+            <ul class="view">
+              <li class="item" v-for="(child, nav) in parent.childs" :key="nav">
+                <router-link :to="child.to || '#'">
+                  <i :class="[child.icon]"></i> {{child.name}}
+                </router-link>
+              </li>
+            </ul>
+          </div>
+        </li>
+      </ul>
+    </div>
     <div class="search">
-      <input v-model="message" type="text" placeholder="请输入关键字!">
-      {{ message }}
+        <input placeholder="请输入关键词" type="text" class="input">
     </div>
   </header>
 </template>
@@ -27,113 +35,164 @@ export default {
       nav: [
       {
         name: '首页',
-        to:'/home'
+        to:'/home',
+        icon:'iconfont icon-home'
       },
       {
         name: '前端',
+        icon:'iconfont icon-diannao',
         childs: [{
           name: 'Vue',
+          icon:'iconfont icon-vue',
           to:'/Vue'
         },
         {
-          name: 'Javascrixpt',
+          name: 'JavaScript',
+          icon:'iconfont icon-js',
           to: '/Javascript'
         },
         {
+          name:'TypeScript',
+          icon:'iconfont icon-typescript'
+        },
+        {
           name: 'HTML',
-          to:'HTML'
+          icon:'iconfont icon-HTML',
+          to:'/HTML'
         },
         {
           name: 'CSS',
-          to:'CSS'
-        }]
+          icon:'iconfont icon-CSS',
+          to:'/CSS'
+        },
+        {
+          name:'小程序',
+          icon:'iconfont icon-xiaochengxu',
+        },
+        ]
       },
       {
         name: '笔记',
+        to:'/notes',
+        icon:'iconfont icon-biji'
       },
       {
         name: '实战',
+        to:'/combat',
+        icon:'iconfont icon-tuceng'
       },
       {
-        name: '关于博主',
-      },
-      {
-        name:'我的',
+        name: '我的',
+        icon:'iconfont icon-wode',
         childs:[{
-          name:'自我介绍'
+          name:'自我介绍',
+          to:'/introduce',
+          icon:'iconfont icon-jieshao'
         },
         {
-          name:'留言板'
+          name:'留言板',
+          to:'/message',
+          icon:'iconfont icon-liuyanban'
         },
         {
-          name:'联系我们'
+          name:'联系我们',
+          to:'/contact',
+          icon:'iconfont icon-lianxi'
+        },
+        ]
+      },
+      {
+        name:'登录',
+        childs:[{
+          name:'注册'
         }]
       }
       ],
-      message:''
     };
   },
 }
-
 </script>
 
 <style lang="scss">
 .navigation {
   display: flex;
   width:1000px;
-  height: 100px;
-  margin: auto;
-  font-size: 30px;
-  .nav-item {
-    position: relative;
-    display: inline-block;
-    padding: 30px;
-    a{
-      color:rgb(95, 95, 95); ;
-    }
-    &:hover {
-      background-color:rgb(0, 140, 255);
-      a{
-        color: rgb(255, 255, 255);
-      }
-      .wrapper{
-        display: block;
-      }
-    }
-    .wrapper{
-      position: absolute;
-      display: none;
-      top: 100%;
-      left: 1px;
-      .view{ 
-        border-radius: 5%;
-        background-color: rgb(255, 255, 255);
-        box-shadow: 0 0 10px rgba(0,0,0,.2);
-        .item{
-          padding: 11px;
+  margin-left: 400px;
+  font-size: 25px;
+  .logo{
+    padding: 15px 40px 0 0;
+  }
+  .nav-wrapper{
+    .nav-row{
+      display: inline-block;
+      .nav-item {
+        display: inline-block;
+        padding: 15px 20px;
+        .parent.icon::before{
+          content: "\e773";
+        }
+        a{
+          font-size: 20px;
+          color:rgb(95, 95, 95); ;
+        }
+        &:hover {
+          background-color:rgb(0, 140, 255);
+          transform: scaleX(1);
+          transition: .5s; 
           a{
-            font-size: 20px;
-            color: rgb(0, 0, 0);
+            color: rgb(255, 255, 255);
           }
-
-          &:hover{
-            background-color: rgb(0, 140, 255);
-            a{
-              color: rgb(255, 255, 255);
-            } 
+          .wrapper{
+            display: block;
+          }
+        }
+        .wrapper{
+          position: absolute;
+          display: none;
+          top: 100%;
+          left: 1px;
+          width: 180px;
+          .view{ 
+            position:relative;
+            top: 10px;
+            background-color: rgb(255, 255, 255);
+            box-shadow: 0 0 10px rgba(0,0,0,.2);
+            .item{
+              padding: 8px;
+              a{
+                font-size: 15px;
+                color: rgb(0, 0, 0);
+              }
+              &:hover{
+                background-color: rgb(0, 140, 255);
+                transform: scaleX(1.05);
+                transition: .2s; 
+                a{
+                  padding-left: 15px;
+                  color: rgb(255, 255, 255);
+                  transition: .2s;
+                } 
+              }
+            }
           }
         }
       }
     }
   }
   .search{
-    width: 200px;
-    padding: 25px 0px;
-    input{
-      height: 5px;
-      padding: 10px;
+    padding:10px 0 0 10px ;
+    .input{
+      padding: 5px;
+      border-color: transparent;
+      background-color: rgb(219, 219, 219);
     }
+    .input::after{
+      width:0;
+      transition: .5s; 
+    } 
+    .input:hover::after{
+      width:250px;
+    } 
   }
 }
-
 </style>

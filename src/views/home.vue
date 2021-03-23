@@ -9,24 +9,30 @@
             <introduction/>
             <wechat/>
             <side/>
+            <clouds/>
         </div>
     </div>
+    <login/>
 </div>
 </template>
 
 <script>
-import banner from '@/components/Header/Banners.vue'
-import side from '@/components/Header/Side.vue'
-import introduction from '@/components/Header/Introduction'
-import wechat from '@/components/Header/WeChat.vue'
-import contents from '@/components/Header/Content.vue'
+import login from '@/components/Header/home/login.vue'
+import banner from '@/components/Header/home/Banners.vue'
+import side from '@/components/Header/home/Side.vue'
+import introduction from '@/components/Header/home/Introduction'
+import wechat from '@/components/Header/home/WeChat.vue'
+import contents from '@/components/Header/home/Content.vue'
+import clouds from '@/components/Header/home/Cloud.vue'
 export default {
     components:{
         banner,
         side,
         contents,
         introduction,
-        wechat
+        wechat,
+        clouds,
+        login
     }
 }
 </script>
@@ -43,6 +49,7 @@ export default {
         .sidebar-wrap{
             width:400px;
             padding-left: 30px;
+            z-index: -1;
         }
     }
 }

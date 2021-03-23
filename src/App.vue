@@ -12,6 +12,7 @@
 
 <script>
 import '@/assets/styles/global.scss'
+import '@/assets/styles/iconfont.scss'
 import HeaderNav from '@/components/Nav.vue'
 import HeaderFooter from '@/components/Footer.vue'
 
@@ -31,6 +32,9 @@ export default {
 
 <style lang="scss">
 #app{
-  
+  .header{
+    position: relative;
+    z-index: 1;
+  }
 }
 </style>

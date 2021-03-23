@@ -15,9 +15,6 @@ export default {
 </script>
 <style lang="scss">
 .sidebar-content{
-  .sidebar-header{
-    
-  }
   .blogger-content{
     img{
       padding: 34px;

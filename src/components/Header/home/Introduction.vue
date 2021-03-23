@@ -11,12 +11,8 @@
 <style lang="scss">
 .sidebar-content{
   position: relative;
-  .sidebar-header{
-  }
   .Introduction{
     padding-top: 10px;
-    span{
-    }
   }
   .sidebar-header:after{
     content: "";
