@@ -17,6 +17,7 @@
 </template>
 
 <script>
+import '@/components/Header/home/style/homeComponents.scss'
 import login from '@/components/Header/home/login.vue'
 import banner from '@/components/Header/home/Banners.vue'
 import side from '@/components/Header/home/Side.vue'

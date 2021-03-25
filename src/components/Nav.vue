@@ -22,7 +22,7 @@
       </ul>
     </div>
     <div class="search">
-        <input placeholder="请输入关键词" type="text" class="input">
+        <input placeholder="请输入关键词" type="text" class="search">
     </div>
   </header>
 </template>
@@ -181,16 +181,16 @@ export default {
   }
   .search{
     padding:10px 0 0 10px ;
-    .input{
+    .search{
       padding: 5px;
       border-color: transparent;
       background-color: rgb(219, 219, 219);
     }
-    .input::after{
+    .search::after{
       width:0;
       transition: .5s; 
     } 
-    .input:hover::after{
+    .search:hover::after{
       width:250px;
     } 
   }

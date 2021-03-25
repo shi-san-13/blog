@@ -35,7 +35,6 @@ export default {
       password: 'shilaimu9'
     }).then(({data} ) => {
       console.log(data.result.list);
-        
       this.nav = data.result.list;
     })
   }
