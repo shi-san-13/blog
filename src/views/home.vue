@@ -17,14 +17,13 @@
 </template>
 
 <script>
-import '@/components/Header/home/style/homeComponents.scss'
-import login from '@/components/Header/home/login.vue'
-import banner from '@/components/Header/home/Banners.vue'
-import side from '@/components/Header/home/Side.vue'
-import introduction from '@/components/Header/home/Introduction'
-import wechat from '@/components/Header/home/WeChat.vue'
-import contents from '@/components/Header/home/Content.vue'
-import clouds from '@/components/Header/home/Cloud.vue'
+import login from '@/components/home/components/login.vue'
+import banner from '@/components/home/components/Banners.vue'
+import side from '@/components/home/components/Side.vue'
+import introduction from '@/components/home/components/Introduction'
+import wechat from '@/components/home/components/WeChat.vue'
+import contents from '@/components/home/components/Content.vue'
+import clouds from '@/components/home/components/Cloud.vue'
 export default {
     components:{
         banner,

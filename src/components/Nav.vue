@@ -24,6 +24,15 @@
     <div class="search">
         <input placeholder="请输入关键词" type="text" class="search">
     </div>
+    <div class="login">
+      <ul class="log-res">
+        <li class="log-res-list" v-for="(item, index) in login" :key="index">
+          <router-link :to="item.to">
+            {{ item.log }}
+          </router-link>
+        </li>
+      </ul>
+    </div>
   </header>
 </template>
 
@@ -41,7 +50,8 @@ export default {
       {
         name: '前端',
         icon:'iconfont icon-diannao',
-        childs: [{
+        childs: [
+        {
           name: 'Vue',
           icon:'iconfont icon-vue',
           to:'/Vue'
@@ -101,13 +111,16 @@ export default {
         },
         ]
       },
-      {
-        name:'登录',
-        childs:[{
-          name:'注册'
-        }]
-      }
       ],
+      login:[
+       {
+         log:'登录',
+         to:'/Vue'
+       },
+       {
+         log:'注册'
+       }
+      ]
     };
   },
 }
@@ -193,6 +206,15 @@ export default {
     .search:hover::after{
       width:250px;
     } 
+  }
+  .login{
+    .log-res{
+      padding: 10px;
+      .log-res-list{
+        display: inline-block;
+        padding-left:10px;
+      }
+    }
   }
 }
 </style>

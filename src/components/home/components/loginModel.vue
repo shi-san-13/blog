@@ -1,48 +1,46 @@
 <template>
-<div class="max-box">
-  <LoginModel :model="model" @modelClick="modelClick">
-  </LoginModel>
+<div class="login-registered row-box">
+  <div class="title">{{ modelText }}</div>
+  <input placeholder="输入账号" type="text" v-model="account" >
+  <input placeholder="输入密码" type="password" v-model="password">
+  <button class="log-but" type="button">
+    <span class="log-spa">{{modelText}}</span>
+  </button>
+  <p class="p-log">转换成
+    <span class="span-log" @click="$emit('modelClick')">
+      {{modelText === '登录' ? '注册' : '登录'}}
+    </span>
+  </p>
 </div>
 </template>
-<script>
-import axios from 'axios';
-import LoginModel from './loginModel';
 
+<script>
 export default {
-  components: {
-    LoginModel,
+  props: {
+    model: {
+      default: 1,
+      type: Number,
+    }
   },
   data(){
     return {
       account:'',
       password:'',
-      model: 1, // 1: 登录 2: 注册
     }
   },
-  methods: {
-    modelClick() {
-      this.model = this.model === 1 ? 2 : 1;
+  computed: {
+    modelText() {
+      return this.model === 1 ? '登录' : '注册';
     }
-  },
-  beforeCreate() {
-    axios.post('http://192.168.3.12:3000/api/v1/user/signin', {
-      account: 'shilaimu9',
-      password: 'shilaimu9'
-    }).then(({data, headers}) => { 
-      const { token } = headers
-      console.log(token)
-      console.log(data.result)
-    })
-  },
-  updated() {
-    let input = document.getElementsByTagName('input')
-    console.log(input)
   }
 }
 </script>
+
 <style lang="scss">
 .max-box{
   .login-registered{
+    display: none;
+    z-index: 2;
     position: absolute;
     top: 300px;
     right: 700px;
@@ -89,12 +87,6 @@ export default {
           cursor:pointer;
         }
       }
-  }
-  .login-registered{
-    z-index: 2;
-  }
-  .before-popup {
-    z-index: 3;
   }
 }
 </style>

@@ -45,6 +45,7 @@ export default {
 <style lang="scss">
 .sidebar-content{
   .content{
+  z-index: 3;
     .list-color{
       display: inline-block;
       margin: 10px 5px 0 0;
