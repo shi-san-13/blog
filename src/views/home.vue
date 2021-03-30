@@ -49,7 +49,6 @@ export default {
         .sidebar-wrap{
             width:400px;
             padding-left: 30px;
-            z-index: -1;
         }
     }
 }

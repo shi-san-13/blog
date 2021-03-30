@@ -118,7 +118,8 @@ export default {
          to:'/Vue'
        },
        {
-         log:'注册'
+         log:'注册',
+         to:'/Vue'
        }
       ]
     };
@@ -129,18 +130,18 @@ export default {
 <style lang="scss">
 .navigation {
   display: flex;
-  width:1000px;
-  margin-left: 400px;
+  width:1200px;
+  padding-left: 350px;
   font-size: 25px;
   .logo{
-    padding: 15px 40px 0 0;
+    padding: 18px 30px 0 0;
   }
   .nav-wrapper{
     .nav-row{
       display: inline-block;
       .nav-item {
         display: inline-block;
-        padding: 15px 20px;
+        padding: 16px 30px;
         .parent.icon::before{
           content: "\e773";
         }
@@ -168,6 +169,7 @@ export default {
           .view{ 
             position:relative;
             top: 10px;
+            border-radius: 15px;
             background-color: rgb(255, 255, 255);
             box-shadow: 0 0 10px rgba(0,0,0,.2);
             .item{
@@ -193,7 +195,7 @@ export default {
     }
   }
   .search{
-    padding:10px 0 0 10px ;
+    padding:13px 0 0 30px ;
     .search{
       padding: 5px;
       border-color: transparent;
@@ -208,11 +210,16 @@ export default {
     } 
   }
   .login{
+    padding: 10px 0 0 10px;
     .log-res{
-      padding: 10px;
       .log-res-list{
         display: inline-block;
         padding-left:10px;
+        a{
+          padding: 10px;
+          font-size: 20px;
+          color: #000;
+        }
       }
     }
   }
