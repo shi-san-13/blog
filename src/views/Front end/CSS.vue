@@ -5,14 +5,7 @@
         <img class="one-banner" src="@/assets/image/banner.jpg">
       </a>
     </div>
-    <ul class="small-banner">
-      <li class="list" v-for="(parent,key) in nav" :key="key">
-        <router-link class="link" :to="parent.to">
-          <img :src="`/image/banner${2 + key}.jpg`" >
-        </router-link>
-      </li>
-    </ul>
-    
+    <button>1111</button>
   </div>
 </template>
 <script>
@@ -27,7 +20,7 @@ export default {
 
 </script>
 <style lang="scss">
-.num{
-  color: blue;
+button{
+  text-align: center;
 }
 </style>
