@@ -42,9 +42,8 @@ export default {
   created(){
     let banner = document.getElementsByTagName('img')[0],
         button = document.getElementsByTagName('button')[0]
-    button.onclick = function(){
       console.log(banner,button)
-    }
+    
     
 
   }
@@ -64,16 +63,12 @@ export default {
       height: 100%;
       border-radius: 20px;
       overflow: hidden;
-      img{
-      }
     }
   }
   .slick-dots{
       display: block;
       .slick-active{
         position:relative;
-        left: 350px;
-        bottom: 30px;
         display: inline-block;
         margin: 0 5px;
         text-align: center;
